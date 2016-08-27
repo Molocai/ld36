@@ -18,7 +18,6 @@ namespace LD36
         {
             if (currentItem != null)
             {
-                Debug.Log(playerBones.engineBone);
                 // Use the item and remove it from the inventory
                 currentItem.Use(this);
                 currentItem = null;
