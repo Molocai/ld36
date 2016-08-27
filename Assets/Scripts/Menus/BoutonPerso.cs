@@ -15,14 +15,9 @@ namespace LD36
         private int currentSprite = 0;
 
         /// <summary>
-        /// Est-ce que le perso est sélectionné par le joueur 1
+        /// Est-ce que le bouton est sélectionné par un joueur ?
         /// </summary>
-        private bool selected1 = false;
-
-        /// <summary>
-        /// Est-ce que le perso est sélectionné par le joueur 2
-        /// </summary>
-        private bool selected2 = false;
+        private bool[] selected;
 
         /// <summary>
         /// Image du personnage
@@ -30,34 +25,31 @@ namespace LD36
         private Image image;
 
         /// <summary>
-        /// Couleur associée à la sélection du joueur 1
+        /// Couleurs de survol pour les joueurs
         /// </summary>
-        private static Color color1 = Color.blue;
-
-        /// <summary>
-        /// Couleur associée à la sélection du joueur 2
-        /// </summary>
-        private static Color color2 = Color.red;
+        private static Color[] colors =
+        {
+            Color.blue,
+            Color.red,
+            Color.green,
+            Color.yellow
+        };
 
         public void Reload()
         {
             image = GetComponent<Image>();
-            SetSelected(1, false);
-            SetSelected(2, false);
+            selected = new bool[4];
+            for (int i = 0; i < 4; i++)
+            {
+                SetSelected(i, false);
+            }
             currentSprite = 0;
             UpdateImage();
         }
 
-        public void SetSelected(int player, bool selected)
+        public void SetSelected(int player, bool select)
         {
-            if (player == 1)
-            {
-                selected1 = selected;
-            }
-            else
-            {
-                selected2 = selected;
-            }
+            selected[player] = select;
             UpdateColor();
         }
 
@@ -89,17 +81,23 @@ namespace LD36
 
         void UpdateColor()
         {
-            if (selected1 && selected2)
+            int nbSelect = 0;
+            Vector4 finalColor = Vector4.zero;
+            for (int i = 0; i < 4; i++)
             {
-                image.color = Color.Lerp(color1, color2, 0.5f);
+                if (selected[i])
+                {
+                    nbSelect++;
+                    Vector4 col = colors[i];
+                    finalColor += col;
+                }
             }
-            else if (selected1)
+            
+            if (nbSelect > 0)
             {
-                image.color = color1;
-            }
-            else if (selected2)
-            {
-                image.color = color2;
+                Color col = finalColor / nbSelect;
+                col.a = 1f;
+                image.color = col;
             }
             else
             {

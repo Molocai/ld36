@@ -19,18 +19,24 @@ namespace LD36
         #endregion
 
         private int nbPlayers;
-
-        public void SetNbPlayers(int nb)
+        public int NbPlayers
         {
-            if (nb > 0)
+            get
             {
-                nbPlayers = nb;
+                return nbPlayers;
+            }
+            set
+            {
+                if (value > 1)
+                {
+                    nbPlayers = value;
+                }
             }
         }
 
-        public bool Are2Players()
+        void Start()
         {
-            return nbPlayers == 2;
+            DontDestroyOnLoad(gameObject);
         }
     }
 }

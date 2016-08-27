@@ -46,7 +46,7 @@ namespace LD36
 
         public void ChangeToPlayers(int nbPlayers)
         {
-            GameManager.Get.SetNbPlayers(nbPlayers);
+            GameManager.Get.NbPlayers = nbPlayers;
             ChangeTo(menuPerso);
             menuPerso.GetComponent<MenuPersos>().Reload();
         }
