@@ -63,6 +63,11 @@ namespace LD36
                 currentVelocity.y -= yAcceleration * Time.deltaTime;
             }
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                playerInventory.UseItem();
+            }
+
             ApplyAndClampVelocity();
         }
 
