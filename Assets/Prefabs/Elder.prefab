@@ -45,8 +45,8 @@ GameObject:
   - 50: {fileID: 5070328}
   - 114: {fileID: 11412590}
   - 114: {fileID: 11455376}
-  - 114: {fileID: 11451870}
   - 114: {fileID: 11479230}
+  - 114: {fileID: 11491148}
   - 95: {fileID: 9515530}
   m_Layer: 0
   m_Name: Elder
@@ -153,21 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
-  playerInventory: {fileID: 0}
-  playerDisplay: {fileID: 0}
---- !u!114 &11451870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63eba3cb8203bf34ea4388011feea3da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  playerInventory: {fileID: 0}
+  playerTuning: {fileID: 0}
   playerDisplay: {fileID: 0}
 --- !u!114 &11455376
 MonoBehaviour:
@@ -181,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
-  playerInventory: {fileID: 0}
+  playerTuning: {fileID: 0}
   playerDisplay: {fileID: 0}
   xAcceleration: 1
   yAcceleration: 1
@@ -193,9 +179,6 @@ MonoBehaviour:
       azertyKey: 0
       qwertyKey: 0
     DownKey:
-      azertyKey: 0
-      qwertyKey: 0
-    UseKey:
       azertyKey: 0
       qwertyKey: 0
     MoveKey:
@@ -213,10 +196,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
-  playerInventory: {fileID: 0}
+  playerTuning: {fileID: 0}
   playerDisplay: {fileID: 0}
   engineBone: {fileID: 499902}
   wheelParticles: {fileID: 19801556}
+--- !u!114 &11491148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63eba3cb8203bf34ea4388011feea3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  playerTuning: {fileID: 0}
+  playerDisplay: {fileID: 0}
 --- !u!198 &19801556
 ParticleSystem:
   m_ObjectHideFlags: 1
