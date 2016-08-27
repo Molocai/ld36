@@ -17,5 +17,20 @@ namespace LD36
             }
         }
         #endregion
+
+        private int nbPlayers;
+
+        public void SetNbPlayers(int nb)
+        {
+            if (nb > 0)
+            {
+                nbPlayers = nb;
+            }
+        }
+
+        public bool Are2Players()
+        {
+            return nbPlayers == 2;
+        }
     }
 }
