@@ -3,6 +3,13 @@ using System.Collections;
 
 namespace LD36
 {
+    [System.Serializable]
+    public struct KeyboardKey
+    {
+        public KeyCode azertyKey;
+        public KeyCode qwertyKey;
+    }
+
     [RequireComponent(typeof(PlayerBase))]
     public class PlayerController : PlayerBase
     {
@@ -33,6 +40,11 @@ namespace LD36
         /// </summary>
         public float velocityDecaySpeed = 2f;
 
+        [Header("Player inputs")]
+        public KeyboardKey UpKey;
+        public KeyboardKey DownKey;
+        public KeyboardKey UseKey;
+        public KeyboardKey MoveKey;
 
         /// <summary>
         /// Current velocity
@@ -48,27 +60,28 @@ namespace LD36
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(MoveKey.azertyKey))
             {
                 currentVelocity.x += xAcceleration * Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(UpKey.azertyKey))
             {
                 currentVelocity.y += yAcceleration * Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(DownKey.azertyKey))
             {
                 currentVelocity.y -= yAcceleration * Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(UseKey.azertyKey))
             {
                 playerInventory.UseItem();
             }
 
             ApplyAndClampVelocity();
+            playerDisplay.UpdateParticles(currentVelocity);
         }
 
         /// <summary>

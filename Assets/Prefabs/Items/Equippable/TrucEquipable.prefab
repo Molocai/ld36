@@ -55,7 +55,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9d2a819175290438779811e9e82642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boneToBeAttachedTo: {fileID: 0}
 --- !u!212 &21252022
 SpriteRenderer:
   m_ObjectHideFlags: 1

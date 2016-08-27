@@ -11,14 +11,14 @@ namespace LD36
         [HideInInspector()]
         public PlayerInventory playerInventory;
         [HideInInspector()]
-        public PlayerBones playerBones;
+        public PlayerDisplay playerDisplay;
 
         void Start()
         {
             // Initialization
             playerController = GetComponent<PlayerController>();
             playerInventory = GetComponent<PlayerInventory>();
-            playerBones = GetComponent<PlayerBones>();
+            playerDisplay = GetComponent<PlayerDisplay>();
         }
     }
 }

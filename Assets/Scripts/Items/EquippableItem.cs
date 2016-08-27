@@ -9,9 +9,9 @@ namespace LD36
         public override void Use(PlayerBase user)
         {
             // Spawn the item
-            GameObject instance = Instantiate(gameObject, user.playerBones.engineBone.transform.position, Quaternion.identity) as GameObject;
+            GameObject instance = Instantiate(gameObject, user.playerDisplay.engineBone.transform.position, Quaternion.identity) as GameObject;
             // Parent it to the engine bone
-            instance.transform.SetParent(user.playerBones.engineBone);
+            instance.transform.SetParent(user.playerDisplay.engineBone);
         }
     }
 }
