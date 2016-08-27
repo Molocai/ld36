@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 namespace LD36
 {
@@ -54,6 +55,11 @@ namespace LD36
         public void GoBack()
         {
             ChangeTo(menuTitre);
+        }
+
+        public void LancerJeu()
+        {
+            SceneManager.LoadScene("Game");
         }
 
         public void Quit()

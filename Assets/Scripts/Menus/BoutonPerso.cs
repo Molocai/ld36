@@ -104,5 +104,10 @@ namespace LD36
                 image.color = Color.white;
             }
         }
+
+        public int GetCurrentSprite()
+        {
+            return currentSprite;
+        }
     }
 }

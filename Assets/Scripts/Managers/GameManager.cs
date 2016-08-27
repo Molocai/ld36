@@ -5,6 +5,12 @@ namespace LD36
 {
     public class GameManager : MonoBehaviour
     {
+        enum Clavier
+        {
+            AZERTY,
+            QWERTY
+        }
+
         #region Singleton
         static GameManager _manager;
         public static GameManager Get
@@ -18,6 +24,9 @@ namespace LD36
         }
         #endregion
 
+        /// <summary>
+        /// Nombre de joueurs dans la course
+        /// </summary>
         private int nbPlayers;
         public int NbPlayers
         {
@@ -30,13 +39,49 @@ namespace LD36
                 if (value > 1)
                 {
                     nbPlayers = value;
+                    persos = new int[value];
+                    skins = new int[value];
                 }
+            }
+        }
+        
+        /// <summary>
+        /// Personnages choisis par les joueurs
+        /// </summary>
+        private int[] persos;
+        public int[] Persos
+        {
+            get
+            {
+                return persos;
+            }
+        }
+
+        /// <summary>
+        /// Skins choisis par les joueurs
+        /// </summary>
+        private int[] skins;
+        public int[] Skins
+        {
+            get
+            {
+                return skins;
             }
         }
 
         void Start()
         {
             DontDestroyOnLoad(gameObject);
+        }
+
+        public void SetPerso(int player, int perso)
+        {
+            persos[player] = perso;
+        }
+
+        public void SetSkin(int player, int skin)
+        {
+            skins[player] = skin;
         }
     }
 }
