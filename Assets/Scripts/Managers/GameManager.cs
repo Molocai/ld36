@@ -29,7 +29,8 @@ namespace LD36
 
         public GameInput[] keybindings;
 
-        public Clavier clavier;
+        [HideInInspector]
+        public Clavier clavier = Clavier.AZERTY;
 
         #region Singleton
         static GameManager _manager;
@@ -84,6 +85,11 @@ namespace LD36
         public void SetSkin(int player, int skin)
         {
             skins[player] = skin;
+        }
+
+        public void SetClavier(bool azerty)
+        {
+            clavier = azerty ? Clavier.AZERTY : Clavier.QWERTY;
         }
     }
 }

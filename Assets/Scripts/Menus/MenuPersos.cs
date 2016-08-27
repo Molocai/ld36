@@ -61,8 +61,8 @@ namespace LD36
                 {
                     Move(i);
                 }
-                if ((clavier == GameManager.Clavier.AZERTY && Input.GetKeyDown(inputs[i].UseKey.azertyKey))
-                    || (clavier == GameManager.Clavier.QWERTY && Input.GetKeyDown(inputs[i].UseKey.qwertyKey)))
+                if ((clavier == GameManager.Clavier.AZERTY && Input.GetKeyDown(inputs[i].MoveKey.azertyKey))
+                    || (clavier == GameManager.Clavier.QWERTY && Input.GetKeyDown(inputs[i].MoveKey.qwertyKey)))
                 {
                     Selection(i);
                 }
@@ -111,6 +111,7 @@ namespace LD36
                     {
                         Increment(ref choix[player], up);
                         busy = true;
+                        break;
                     }
                 }
             }
@@ -162,16 +163,16 @@ namespace LD36
 
         void CheckSprites()
         {
-            for (int i = 0; i < nbPlayers; i++)
+            bool busy = true;
+            while (busy)
             {
-                if (!valides[i])
+                busy = false;
+                for (int i = 0; i < nbPlayers; i++)
                 {
-                    continue;
-                }
-                bool busy = true;
-                while (busy)
-                {
-                    busy = false;
+                    if (!valides[i])
+                    {
+                        continue;
+                    }
                     for (int j = 0; j < nbPlayers; j++)
                     {
                         if (!valides[j] && choix[j] == choix[i])
