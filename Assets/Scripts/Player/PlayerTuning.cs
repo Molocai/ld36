@@ -3,23 +3,29 @@ using System.Collections.Generic;
 
 namespace LD36
 {
-    public enum ITEM_SLOT
-    {
-        REACTOR,
-        DOG
-    }
-
     [RequireComponent(typeof(PlayerBase))]
     public class PlayerTuning : PlayerBase
     {
-        public Dictionary<ITEM_SLOT, GameObject> itemsEquipped;
+        public GameObject reactorGo;
 
-        public void PickupItem(ITEM_SLOT slot, GameObject go)
+        public void PickupItem(GameObject go, GOOD_BAD status)
         {
-            if (itemsEquipped.ContainsKey(slot))
-                itemsEquipped[slot] = go;
-            else
-                itemsEquipped.Add(slot, go);
+            if (go.GetComponent<ReactorItem>() != null)
+            {
+                Transform bone = (status == GOOD_BAD.GOOD) ? playerDisplay.goodReactorBone : playerDisplay.badReactorBone;
+
+                // Instantiate the reactor
+                if (reactorGo != null)
+                {
+                    Destroy(reactorGo);
+                }
+
+                reactorGo = Instantiate(go, bone.transform.position, bone.transform.rotation) as GameObject;
+                reactorGo.transform.SetParent(bone);
+
+                ReactorItem reactor = reactorGo.GetComponent<ReactorItem>();
+                reactor.SetPlayerController(playerController);
+            }
         }
     }
 }

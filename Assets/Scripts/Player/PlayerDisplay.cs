@@ -6,7 +6,9 @@ namespace LD36
     [RequireComponent(typeof(PlayerBase))]
     public class PlayerDisplay : PlayerBase
     {
-        public Transform engineBone;
+        public Transform goodReactorBone;
+        public Transform badReactorBone;
+
         public ParticleSystem wheelParticles;
 
         private Animator animator;

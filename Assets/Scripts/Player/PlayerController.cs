@@ -39,14 +39,7 @@ namespace LD36
         /// <summary>
         /// Current velocity
         /// </summary>
-        private Vector2 currentVelocity;
-        public Vector2 CurrentVelocity
-        {
-            get
-            {
-                return currentVelocity;
-            }
-        }
+        public Vector2 currentVelocity;
 
         void Update()
         {
