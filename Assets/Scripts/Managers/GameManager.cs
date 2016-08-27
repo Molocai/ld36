@@ -21,13 +21,15 @@ namespace LD36
 
     public class GameManager : MonoBehaviour
     {
-        enum Clavier
+        public enum Clavier
         {
             AZERTY,
             QWERTY
         }
 
         public GameInput[] keybindings;
+
+        public Clavier clavier;
 
         #region Singleton
         static GameManager _manager;
@@ -57,21 +59,8 @@ namespace LD36
                 if (value > 1)
                 {
                     nbPlayers = value;
-                    persos = new int[value];
                     skins = new int[value];
                 }
-            }
-        }
-        
-        /// <summary>
-        /// Personnages choisis par les joueurs
-        /// </summary>
-        private int[] persos;
-        public int[] Persos
-        {
-            get
-            {
-                return persos;
             }
         }
 
@@ -90,11 +79,6 @@ namespace LD36
         void Start()
         {
             DontDestroyOnLoad(gameObject);
-        }
-
-        public void SetPerso(int player, int perso)
-        {
-            persos[player] = perso;
         }
 
         public void SetSkin(int player, int skin)

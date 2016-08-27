@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1566,8 +1566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e041d2ef11d029a459e57764c06c5d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commandes3: {fileID: 1989474476}
-  commandes4: {fileID: 1283964448}
+  commandes:
+  - {fileID: 317999783}
+  - {fileID: 574074268}
+  - {fileID: 1989474476}
+  - {fileID: 1283964448}
   boutons:
   - {fileID: 226603722}
   - {fileID: 309454975}
@@ -1926,7 +1929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2112,6 +2115,7 @@ MonoBehaviour:
     MoveKey:
       azertyKey: 0
       qwertyKey: 0
+  clavier: 0
 --- !u!4 &1270339911
 Transform:
   m_ObjectHideFlags: 0
