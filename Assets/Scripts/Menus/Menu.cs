@@ -41,7 +41,6 @@ namespace LD36
             {
                 newMenu.gameObject.SetActive(true);
                 currentMenu = newMenu;
-                SetSelection();
             }
         }
 
