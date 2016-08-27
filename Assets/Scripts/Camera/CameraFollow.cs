@@ -20,9 +20,29 @@ namespace LD36
         /// </summary>
         private Vector3 offset = new Vector3(0, 0, -10);
 
+        void Start()
+        {
+            InvokeRepeating("CheckForNewTarget", 2, 2);
+        }
+
         void Update()
         {
-            transform.position = Vector3.Lerp(transform.position, target.transform.position + offset, Time.deltaTime * smoothDelay);
+            if (target != null)
+                transform.position = Vector3.Lerp(transform.position, target.transform.position + offset, Time.deltaTime * smoothDelay);
+        }
+
+        void CheckForNewTarget()
+        {
+            PlayerBase[] players = GameObject.FindObjectsOfType<PlayerBase>();
+            PlayerBase numberOne = players[0];
+
+            foreach(PlayerBase p in players)
+            {
+                if (p.transform.position.x > numberOne.transform.position.x)
+                    numberOne = p;
+            }
+
+            target = numberOne;
         }
     }
 }
