@@ -4,9 +4,11 @@ using System;
 
 namespace LD36
 {
-    public class EquippableItem : ItemBase
+    public class EquippableItem : MonoBehaviour
     {
-        public override void Use(PlayerBase user)
+        public ITEM_SLOT slot;
+
+        public void Use(PlayerBase user)
         {
             // Spawn the item
             GameObject instance = Instantiate(gameObject, user.playerDisplay.engineBone.transform.position, Quaternion.identity) as GameObject;

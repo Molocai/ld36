@@ -17,7 +17,7 @@ namespace LD36
             else
             {
                 // Pick up the item and destroy it
-                collidingPlayer.playerInventory.PickupItem(itemPrefab);
+                collidingPlayer.playerTuning.PickupItem(itemPrefab.GetComponent<EquippableItem>().slot, itemPrefab);
                 Destroy(gameObject);
             }
         }

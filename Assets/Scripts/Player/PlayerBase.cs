@@ -9,7 +9,7 @@ namespace LD36
         [HideInInspector()]
         public PlayerController playerController;
         [HideInInspector()]
-        public PlayerInventory playerInventory;
+        public PlayerTuning playerTuning;
         [HideInInspector()]
         public PlayerDisplay playerDisplay;
 
@@ -17,7 +17,7 @@ namespace LD36
         {
             // Initialization
             playerController = GetComponent<PlayerController>();
-            playerInventory = GetComponent<PlayerInventory>();
+            playerTuning = GetComponent<PlayerTuning>();
             playerDisplay = GetComponent<PlayerDisplay>();
         }
     }

@@ -15,7 +15,6 @@ namespace LD36
     {
         public KeyboardKey UpKey;
         public KeyboardKey DownKey;
-        public KeyboardKey UseKey;
         public KeyboardKey MoveKey;
     }
 

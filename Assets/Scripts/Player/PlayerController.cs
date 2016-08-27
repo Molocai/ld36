@@ -65,11 +65,6 @@ namespace LD36
                 currentVelocity.y -= yAcceleration * Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(playerInputs.UseKey.azertyKey))
-            {
-                playerInventory.UseItem();
-            }
-
             ApplyAndClampVelocity();
             playerDisplay.UpdateParticles(currentVelocity);
             playerDisplay.UpdateAnimations(currentVelocity);

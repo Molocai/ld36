@@ -1,32 +1,25 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace LD36
 {
-    [RequireComponent(typeof(PlayerBase))]
-    public class PlayerInventory : PlayerBase
+    public enum ITEM_SLOT
     {
-        /// <summary>
-        /// The item the player owns
-        /// </summary>
-        private ItemBase currentItem;
+        REACTOR,
+        DOG
+    }
 
-        /// <summary>
-        /// Uses the currently owned item
-        /// </summary>
-        public void UseItem()
-        {
-            if (currentItem != null)
-            {
-                // Use the item and remove it from the inventory
-                currentItem.Use(this);
-                currentItem = null;
-            }
-        }
+    [RequireComponent(typeof(PlayerBase))]
+    public class PlayerTuning : PlayerBase
+    {
+        public Dictionary<ITEM_SLOT, GameObject> itemsEquipped;
 
-        public void PickupItem(GameObject pickupItem)
+        public void PickupItem(ITEM_SLOT slot, GameObject go)
         {
-            currentItem = pickupItem.GetComponent<ItemBase>();
+            if (itemsEquipped.ContainsKey(slot))
+                itemsEquipped[slot] = go;
+            else
+                itemsEquipped.Add(slot, go);
         }
     }
 }
