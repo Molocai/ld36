@@ -25,5 +25,10 @@ namespace LD36
         {
             animator.SetFloat("Speed", velocity.magnitude * 1000);
         }
+
+        void LateUpdate()
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+        }
     }
 }
