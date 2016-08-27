@@ -338,7 +338,6 @@ GameObject:
   - 222: {fileID: 226603721}
   - 114: {fileID: 226603720}
   - 114: {fileID: 226603719}
-  - 114: {fileID: 226603722}
   m_Layer: 5
   m_Name: Perso1
   m_TagString: Untagged
@@ -416,15 +415,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3bd484fed7b5a9e4b9bc11d1f19bf0af, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -437,22 +436,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 226603717}
---- !u!114 &226603722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 226603717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92aac58b644cc449bbde66d084a9b21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &263871569
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +641,6 @@ GameObject:
   - 222: {fileID: 309454974}
   - 114: {fileID: 309454973}
   - 114: {fileID: 309454972}
-  - 114: {fileID: 309454975}
   m_Layer: 5
   m_Name: Perso2
   m_TagString: Untagged
@@ -736,15 +718,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b6e896cd021db9941b0940d230b93f96, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -757,22 +739,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 309454970}
---- !u!114 &309454975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 309454970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92aac58b644cc449bbde66d084a9b21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &317999781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,10 +1190,10 @@ RectTransform:
   - {fileID: 1221031623}
   m_Father: {fileID: 1996332574}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400, y: 169.21}
-  m_SizeDelta: {x: 800.01, y: 338.42}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -18.789993}
+  m_SizeDelta: {x: 800.01, y: 338.42004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582988913
 MonoBehaviour:
@@ -1382,7 +1348,6 @@ GameObject:
   - 222: {fileID: 1003145236}
   - 114: {fileID: 1003145235}
   - 114: {fileID: 1003145234}
-  - 114: {fileID: 1003145233}
   m_Layer: 5
   m_Name: Perso4
   m_TagString: Untagged
@@ -1407,22 +1372,6 @@ RectTransform:
   m_AnchoredPosition: {x: 550.005, y: -76.125}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1003145233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1003145231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92aac58b644cc449bbde66d084a9b21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1003145234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,15 +1425,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d35f1ebbe8b180d4ba57ed3840b4c5b2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1536,10 +1485,10 @@ RectTransform:
   - {fileID: 1729897823}
   m_Father: {fileID: 1996332574}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400, y: 169.21}
-  m_SizeDelta: {x: 800.01, y: 338.42}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 400, y: -234.79}
+  m_SizeDelta: {x: 800.01, y: 338.42004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080988583
 MonoBehaviour:
@@ -1613,11 +1562,16 @@ MonoBehaviour:
   - {fileID: 574074268}
   - {fileID: 1989474476}
   - {fileID: 1283964448}
-  boutons:
-  - {fileID: 226603722}
-  - {fileID: 309454975}
-  - {fileID: 1235730944}
-  - {fileID: 1003145233}
+  images:
+  - {fileID: 226603720}
+  - {fileID: 309454973}
+  - {fileID: 1235730942}
+  - {fileID: 1003145235}
+  sprites:
+  - {fileID: 21300000, guid: 3bd484fed7b5a9e4b9bc11d1f19bf0af, type: 3}
+  - {fileID: 21300000, guid: b6e896cd021db9941b0940d230b93f96, type: 3}
+  - {fileID: 21300000, guid: 58ba9484a081048448d0bba8b51c9ba4, type: 3}
+  - {fileID: 21300000, guid: d35f1ebbe8b180d4ba57ed3840b4c5b2, type: 3}
   lancer: {fileID: 1729897824}
 --- !u!1 &1221031622
 GameObject:
@@ -1893,7 +1847,6 @@ GameObject:
   - 222: {fileID: 1235730943}
   - 114: {fileID: 1235730942}
   - 114: {fileID: 1235730941}
-  - 114: {fileID: 1235730944}
   m_Layer: 5
   m_Name: Perso3
   m_TagString: Untagged
@@ -1971,15 +1924,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 58ba9484a081048448d0bba8b51c9ba4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1992,22 +1945,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1235730939}
---- !u!114 &1235730944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1235730939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92aac58b644cc449bbde66d084a9b21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &1247370094
 GameObject:
   m_ObjectHideFlags: 0

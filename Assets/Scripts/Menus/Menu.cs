@@ -64,7 +64,13 @@ namespace LD36
 
         public void Quit()
         {
-            Application.Quit();
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #elif UNITY_WEBPLAYER
+                Application.OpenURL("http://www.google.fr");
+            #else
+                Application.Quit();
+            #endif
         }
     }
 }

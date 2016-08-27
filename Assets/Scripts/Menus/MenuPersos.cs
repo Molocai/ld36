@@ -8,8 +8,10 @@ namespace LD36
     {
         [Tooltip("Affichage des commandes")]
         public Text[] commandes;
-        [Tooltip("Boutons de sélection des personnages")]
-        public BoutonPerso[] boutons;
+        [Tooltip("images de sélection des personnages")]
+        public Image[] images;
+        [Tooltip("Sprites disponibles")]
+        public Sprite[] sprites;
         [Tooltip("Bouton pour lancer la partie")]
         public Button lancer;
 
@@ -17,6 +19,11 @@ namespace LD36
         /// Nombre de joueurs
         /// </summary>
         private int nbPlayers;
+
+        /// <summary>
+        /// Détermine le skin choisi par les joueurs
+        /// </summary>
+        private int[] choix;
 
         /// <summary>
         /// Détermine si tous les joueurs ont choisi un personnage
@@ -27,15 +34,17 @@ namespace LD36
         {
             nbPlayers = GameManager.Get.NbPlayers;
 
+            choix = new int[nbPlayers];
             valides = new bool[nbPlayers];
 
             for (int i = 0; i < 4; i++)
             {
                 commandes[i].gameObject.SetActive(nbPlayers > i);
-                boutons[i].Reload();
-                boutons[i].gameObject.SetActive(nbPlayers > i);
+                images[i].sprite = sprites[0];
+                images[i].gameObject.SetActive(nbPlayers > i);
                 if (i < nbPlayers)
                 {
+                    choix[i] = 0;
                     valides[i] = false;
                 }
             }
@@ -43,9 +52,8 @@ namespace LD36
 
         void Update()
         {
-            GameManager game = GameManager.Get;
-            GameManager.Clavier clavier = game.clavier;
-            GameInput[] inputs = game.keybindings;
+            GameManager.Clavier clavier = GameManager.Get.clavier;
+            GameInput[] inputs = GameManager.Get.keybindings;
 
             for (int i = 0; i < nbPlayers; i++)
             {
@@ -53,8 +61,8 @@ namespace LD36
                 {
                     Move(i);
                 }
-                if ((clavier == GameManager.Clavier.AZERTY && Input.GetKeyDown(inputs[i].UseKey.azertyKey)
-                    || clavier == GameManager.Clavier.QWERTY && Input.GetKeyDown(inputs[i].UseKey.qwertyKey)))
+                if ((clavier == GameManager.Clavier.AZERTY && Input.GetKeyDown(inputs[i].UseKey.azertyKey))
+                    || (clavier == GameManager.Clavier.QWERTY && Input.GetKeyDown(inputs[i].UseKey.qwertyKey)))
                 {
                     Selection(i);
                 }
@@ -63,20 +71,77 @@ namespace LD36
 
         void Move(int player)
         {
-            GameManager game = GameManager.Get;
-            GameManager.Clavier clavier = game.clavier;
-            GameInput[] inputs = game.keybindings;
+            GameManager.Clavier clavier = GameManager.Get.clavier;
+            GameInput[] inputs = GameManager.Get.keybindings;
 
             if (clavier == GameManager.Clavier.AZERTY)
             {
                 if (Input.GetKeyDown(inputs[player].UpKey.azertyKey))
                 {
-                    boutons[player].ChangeImage(true);
+                    ChangeImage(player, true);
                 }
                 if (Input.GetKeyDown(inputs[player].DownKey.azertyKey))
                 {
-                    boutons[player].ChangeImage(false);
+                    ChangeImage(player, false);
                 }
+            }
+            else
+            {
+                if (Input.GetKeyDown(inputs[player].UpKey.qwertyKey))
+                {
+                    ChangeImage(player, true);
+                }
+                if (Input.GetKeyDown(inputs[player].DownKey.qwertyKey))
+                {
+                    ChangeImage(player, false);
+                }
+            }
+        }
+
+        void ChangeImage(int player, bool up)
+        {
+            Increment(ref choix[player], up);
+            bool busy = true;
+            while (busy)
+            {
+                busy = false;
+                for (int i = 0; i < nbPlayers; i++)
+                {
+                    if (choix[player] == choix[i] && valides[i])
+                    {
+                        Increment(ref choix[player], up);
+                        busy = true;
+                    }
+                }
+            }
+            UpdateImage();
+        }
+
+        void Increment(ref int start, bool up)
+        {
+            if (up)
+            {
+                start++;
+                if (start >= sprites.Length)
+                {
+                    start = 0;
+                }
+            }
+            else
+            {
+                start--;
+                if (start < 0)
+                {
+                    start = sprites.Length - 1;
+                }
+            }
+        }
+
+        void UpdateImage()
+        {
+            for (int i = 0; i < nbPlayers; i++)
+            {
+                images[i].sprite = sprites[choix[i]];
             }
         }
 
@@ -88,10 +153,36 @@ namespace LD36
             }
             else
             {
-                GameManager.Get.SetSkin(player, boutons[player].GetCurrentSprite());
+                GameManager.Get.SetSkin(player, choix[player]);
                 valides[player] = true;
+                CheckSprites();
             }
             CheckLancer();
+        }
+
+        void CheckSprites()
+        {
+            for (int i = 0; i < nbPlayers; i++)
+            {
+                if (!valides[i])
+                {
+                    continue;
+                }
+                bool busy = true;
+                while (busy)
+                {
+                    busy = false;
+                    for (int j = 0; j < nbPlayers; j++)
+                    {
+                        if (!valides[j] && choix[j] == choix[i])
+                        {
+                            Increment(ref choix[j], true);
+                            busy = true;
+                        }
+                    }
+                }
+            }
+            UpdateImage();
         }
 
         void CheckLancer()
