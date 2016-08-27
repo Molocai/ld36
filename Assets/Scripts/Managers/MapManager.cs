@@ -13,7 +13,8 @@ namespace LD36
 
         void Start()
         {
-            int nbPlayers = 4; //GameManager.Get.NbPlayers;
+            //int nbPlayers = GameManager.Get.NbPlayers;
+            int nbPlayers = 4;
             for (int i = 0; i < nbPlayers; i++)
             {
                 GameObject player = Instantiate(playerPrefab, spawns[i].transform.position, Quaternion.identity) as GameObject;
@@ -21,6 +22,7 @@ namespace LD36
                 playerController.playerInputs = GameManager.Get.keybindings[i];
 
                 Animator animator = playerController.GetComponent<Animator>();
+                //animator.SetInteger("SpriteId", GameManager.Get.Skins[i]);
                 animator.SetInteger("SpriteId", i);
             }
         }
