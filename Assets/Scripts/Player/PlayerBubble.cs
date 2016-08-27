@@ -5,9 +5,12 @@ namespace LD36
 {
     public class PlayerBubble : MonoBehaviour
     {
+        [Tooltip("Canvas contenant l'image de la bulle et le texte affichant la distance")]
         public Canvas bubble;
+        [Tooltip("Distance séparant le personnage du coin de la caméra")]
         public Text distance;
         [Range(0, 5)]
+        [Tooltip("Décimales après la virgule pour la distance")]
         public int arrondi = 1;
 
         private Renderer ren;
