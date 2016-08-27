@@ -9,13 +9,20 @@ namespace LD36
         public Transform goodReactorBone;
         public Transform badReactorBone;
 
+        public Transform goodIenchBone;
+        public Transform badIenchBone;
+
         public ParticleSystem wheelParticles;
 
+        public GameObject flammes;
+
         private Animator animator;
+        private Animator flammesAnimator;
 
         void Start()
         {
             animator = GetComponent<Animator>();
+            flammesAnimator = flammes.GetComponent<Animator>();
         }
 
         public void UpdateParticles(Vector2 velocity, float multiplier = 1000)
@@ -23,9 +30,10 @@ namespace LD36
             wheelParticles.emissionRate = velocity.magnitude * multiplier;
         }
 
-        public void UpdateAnimations(Vector2 velocity)
+        public void UpdateAnimations(Vector2 velocity, float xMaxVelocity)
         {
             animator.SetFloat("Speed", velocity.magnitude * 1000);
+            flammesAnimator.SetInteger("Intensity", Mathf.RoundToInt((velocity.magnitude / xMaxVelocity) * 30));
         }
 
         void LateUpdate()

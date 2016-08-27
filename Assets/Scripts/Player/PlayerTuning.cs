@@ -7,6 +7,7 @@ namespace LD36
     public class PlayerTuning : PlayerBase
     {
         public GameObject reactorGo;
+        public GameObject chienGo;
 
         public void PickupItem(GameObject go, GOOD_BAD status)
         {
@@ -14,7 +15,6 @@ namespace LD36
             {
                 Transform bone = (status == GOOD_BAD.GOOD) ? playerDisplay.goodReactorBone : playerDisplay.badReactorBone;
 
-                // Instantiate the reactor
                 if (reactorGo != null)
                 {
                     Destroy(reactorGo);
@@ -25,6 +25,22 @@ namespace LD36
 
                 ReactorItem reactor = reactorGo.GetComponent<ReactorItem>();
                 reactor.SetPlayerController(playerController);
+            }
+
+            if (go.GetComponent<ChienItem>() != null)
+            {
+                Transform bone = (status == GOOD_BAD.GOOD) ? playerDisplay.goodIenchBone : playerDisplay.badIenchBone;
+
+                if (chienGo != null)
+                {
+                    Destroy(chienGo);
+                }
+
+                chienGo = Instantiate(go, bone.transform.position, bone.transform.rotation) as GameObject;
+                chienGo.transform.SetParent(bone);
+
+                ChienItem chien = chienGo.GetComponent<ChienItem>();
+                chien.SetPlayerController(playerController);
             }
         }
     }

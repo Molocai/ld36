@@ -12,7 +12,6 @@ namespace LD36
 
         void Start()
         {
-            Debug.Log("coucou");
         }
 
         public void SetPlayerController(PlayerController pc)
