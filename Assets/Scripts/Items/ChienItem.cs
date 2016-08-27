@@ -12,11 +12,13 @@ namespace LD36
         {
             this.pc = pc;
             pc.xAcceleration += value;
+            pc.xMaxVelocity += value;
         }
 
         void OnDestroy()
         {
             pc.xAcceleration -= value;
+            pc.xMaxVelocity -= value;
         }
     }
 }
