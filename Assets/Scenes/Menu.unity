@@ -1566,12 +1566,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commandes2: {fileID: 574074268}
-  commandes3: {fileID: 0}
-  commandes4: {fileID: 0}
+  commandes3: {fileID: 1989474476}
+  commandes4: {fileID: 1283964448}
   persos:
   - {fileID: 226603722}
   - {fileID: 309454975}
   - {fileID: 1235730944}
+  - {fileID: 1003145233}
 --- !u!1 &1221031622
 GameObject:
   m_ObjectHideFlags: 0
