@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace LD36
 {
@@ -7,6 +8,8 @@ namespace LD36
     {
         public GameObject[] spawns;
         public GameObject playerPrefab;
+
+        public static Action OnPlayerSpawned;
 
         void Start()
         {
