@@ -3,6 +3,22 @@ using System.Collections;
 
 namespace LD36
 {
+    [System.Serializable]
+    public struct KeyboardKey
+    {
+        public KeyCode azertyKey;
+        public KeyCode qwertyKey;
+    }
+
+    [System.Serializable]
+    public struct GameInput
+    {
+        public KeyboardKey UpKey;
+        public KeyboardKey DownKey;
+        public KeyboardKey UseKey;
+        public KeyboardKey MoveKey;
+    }
+
     public class GameManager : MonoBehaviour
     {
         enum Clavier
@@ -10,6 +26,8 @@ namespace LD36
             AZERTY,
             QWERTY
         }
+
+        public GameInput[] keybindings;
 
         #region Singleton
         static GameManager _manager;

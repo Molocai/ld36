@@ -2063,6 +2063,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05d0cab7cf68d46b291bbc17bb1fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keybindings:
+  - UpKey:
+      azertyKey: 0
+      qwertyKey: 0
+    DownKey:
+      azertyKey: 0
+      qwertyKey: 0
+    UseKey:
+      azertyKey: 0
+      qwertyKey: 0
+    MoveKey:
+      azertyKey: 0
+      qwertyKey: 0
+  - UpKey:
+      azertyKey: 0
+      qwertyKey: 0
+    DownKey:
+      azertyKey: 0
+      qwertyKey: 0
+    UseKey:
+      azertyKey: 0
+      qwertyKey: 0
+    MoveKey:
+      azertyKey: 0
+      qwertyKey: 0
+  - UpKey:
+      azertyKey: 0
+      qwertyKey: 0
+    DownKey:
+      azertyKey: 0
+      qwertyKey: 0
+    UseKey:
+      azertyKey: 0
+      qwertyKey: 0
+    MoveKey:
+      azertyKey: 0
+      qwertyKey: 0
+  - UpKey:
+      azertyKey: 0
+      qwertyKey: 0
+    DownKey:
+      azertyKey: 0
+      qwertyKey: 0
+    UseKey:
+      azertyKey: 0
+      qwertyKey: 0
+    MoveKey:
+      azertyKey: 0
+      qwertyKey: 0
 --- !u!4 &1270339911
 Transform:
   m_ObjectHideFlags: 0
