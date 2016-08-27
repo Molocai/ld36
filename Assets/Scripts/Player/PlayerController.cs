@@ -72,6 +72,7 @@ namespace LD36
 
             ApplyAndClampVelocity();
             playerDisplay.UpdateParticles(currentVelocity);
+            playerDisplay.UpdateAnimations(currentVelocity);
         }
 
         /// <summary>

@@ -9,9 +9,21 @@ namespace LD36
         public Transform engineBone;
         public ParticleSystem wheelParticles;
 
+        private Animator animator;
+
+        void Start()
+        {
+            animator = GetComponent<Animator>();
+        }
+
         public void UpdateParticles(Vector2 velocity, float multiplier = 1000)
         {
             wheelParticles.emissionRate = velocity.magnitude * multiplier;
+        }
+
+        public void UpdateAnimations(Vector2 velocity)
+        {
+            animator.SetFloat("Speed", velocity.magnitude * 1000);
         }
     }
 }
