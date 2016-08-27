@@ -19,6 +19,9 @@ namespace LD36
                 GameObject player = Instantiate(playerPrefab, spawns[i].transform.position, Quaternion.identity) as GameObject;
                 PlayerController playerController = player.GetComponentInChildren<PlayerController>();
                 playerController.playerInputs = GameManager.Get.keybindings[i];
+
+                Animator animator = playerController.GetComponent<Animator>();
+                animator.SetInteger("SpriteId", i);
             }
         }
     }

@@ -47,6 +47,7 @@ GameObject:
   - 114: {fileID: 11455376}
   - 114: {fileID: 11451870}
   - 114: {fileID: 11479230}
+  - 95: {fileID: 9515530}
   m_Layer: 0
   m_Name: Elder
   m_TagString: Untagged
@@ -123,6 +124,23 @@ BoxCollider2D:
   m_Offset: {x: 2, y: -4}
   serializedVersion: 2
   m_Size: {x: 5.5, y: 2.5}
+--- !u!95 &9515530
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190492}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8f7d5c245bcb1f4da68783ee7023575, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11412590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1735,7 +1753,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -823437479
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 46c752aa65d290e41817e12a09a46e52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3bd484fed7b5a9e4b9bc11d1f19bf0af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
