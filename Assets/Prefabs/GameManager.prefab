@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &129626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 463170}
+  - 114: {fileID: 11444398}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463170
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 262.82364, y: 165.89577, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11444398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db05d0cab7cf68d46b291bbc17bb1fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keybindings:
+  - UpKey:
+      azertyKey: 97
+      qwertyKey: 113
+    DownKey:
+      azertyKey: 113
+      qwertyKey: 97
+    UseKey:
+      azertyKey: 122
+      qwertyKey: 119
+    MoveKey:
+      azertyKey: 115
+      qwertyKey: 115
+  - UpKey:
+      azertyKey: 273
+      qwertyKey: 273
+    DownKey:
+      azertyKey: 274
+      qwertyKey: 274
+    UseKey:
+      azertyKey: 276
+      qwertyKey: 276
+    MoveKey:
+      azertyKey: 275
+      qwertyKey: 275
+  - UpKey:
+      azertyKey: 116
+      qwertyKey: 116
+    DownKey:
+      azertyKey: 103
+      qwertyKey: 103
+    UseKey:
+      azertyKey: 121
+      qwertyKey: 121
+    MoveKey:
+      azertyKey: 104
+      qwertyKey: 104
+  - UpKey:
+      azertyKey: 111
+      qwertyKey: 111
+    DownKey:
+      azertyKey: 108
+      qwertyKey: 108
+    UseKey:
+      azertyKey: 112
+      qwertyKey: 112
+    MoveKey:
+      azertyKey: 109
+      qwertyKey: 58
+  clavier: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 129626}
+  m_IsPrefabParent: 1
