@@ -18,6 +18,7 @@ namespace LD36
         // Use this for initialization
         void Start()
         {
+            bubble.worldCamera = Camera.main;
             bubble.gameObject.SetActive(false);
             ren = GetComponent<Renderer>();
         }
@@ -27,6 +28,9 @@ namespace LD36
         {
             bubble.gameObject.SetActive(!IsVisible());
             distance.text = CalcDist() + "m";
+            Vector3 camPos = Camera.main.WorldToScreenPoint(transform.position);
+            RectTransform rect = distance.rectTransform;
+            rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, camPos.y);
         }
 
         float CalcDist()
