@@ -22,7 +22,7 @@ namespace LD36
 
         void Start()
         {
-            InvokeRepeating("CheckForNewTarget", 2, 2);
+            InvokeRepeating("CheckForNewTarget", 3, 1);
         }
 
         void Update()

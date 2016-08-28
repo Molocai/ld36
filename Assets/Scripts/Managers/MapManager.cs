@@ -20,11 +20,24 @@ namespace LD36
                 GameObject player = Instantiate(playerPrefab, spawns[i].transform.position, Quaternion.identity) as GameObject;
                 PlayerController playerController = player.GetComponentInChildren<PlayerController>();
                 playerController.playerInputs = GameManager.Get.keybindings[i];
+                playerController.inputsEnabled = false;
                 player.GetComponentInChildren<PlayerDisplay>().spriteId = i;
 
                 Animator animator = playerController.GetComponent<Animator>();
                 //animator.SetInteger("SpriteId", GameManager.Get.Skins[i]);
                 animator.SetInteger("SpriteId", i);
+
+                StartCoroutine(StartCountdown());
+            }
+        }
+
+        public IEnumerator StartCountdown()
+        {
+            yield return new WaitForSeconds(3f);
+
+            foreach (PlayerBase p in GameObject.FindObjectsOfType<PlayerBase>())
+            {
+                p.playerController.inputsEnabled = true;
             }
         }
     }

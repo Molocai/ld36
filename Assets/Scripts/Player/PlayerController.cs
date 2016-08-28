@@ -45,6 +45,8 @@ namespace LD36
         [Range(0f, 1f)]
         public float collisionVolume;
 
+        public bool inputsEnabled;
+
         /// <summary>
         /// Current velocity
         /// </summary>
@@ -53,6 +55,9 @@ namespace LD36
 
         void Update()
         {
+            if (!inputsEnabled)
+                return;
+
             if (Input.GetKeyDown(playerInputs.MoveKey.azertyKey))
             {
                 currentVelocity.x += xAcceleration * Time.deltaTime;
