@@ -24,7 +24,7 @@ namespace LD36
                 reactorGo.transform.SetParent(bone);
 
                 ReactorItem reactor = reactorGo.GetComponent<ReactorItem>();
-                reactor.SetPlayerController(playerController);
+                reactor.Init(playerController);
             }
 
             if (go.GetComponent<ChienItem>() != null)

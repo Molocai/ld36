@@ -47,5 +47,10 @@ namespace LD36
                 sr.sortingOrder = -(int)(transform.position.y * 100);
             }
         }
+
+        public void DisplayFlammes(bool display)
+        {
+            flammes.GetComponent<SpriteRenderer>().enabled = display;
+        }
     }
 }

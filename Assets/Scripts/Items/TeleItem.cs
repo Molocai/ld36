@@ -44,6 +44,7 @@ namespace LD36
 
             player.playerController.xAcceleration = 0;
             player.playerController.currentVelocity = Vector2.zero;
+
             yield return new WaitForSeconds(2f);
 
             player.playerController.xAcceleration = currentXAcceleration;

@@ -6,17 +6,16 @@ namespace LD36
     public class ReactorItem : MonoBehaviour
     {
         public float value;
+        public SpriteRenderer flammesBleues;
+
         private PlayerController pc;
 
-        float timer = 0;
+        float timer = 8;
 
-        void Start()
-        {
-        }
-
-        public void SetPlayerController(PlayerController pc)
+        public void Init(PlayerController pc)
         {
             this.pc = pc;
+            pc.playerDisplay.DisplayFlammes(false);
         }
 
         void Update()
@@ -25,14 +24,17 @@ namespace LD36
 
             if (timer >= 10)
             {
-                PushInDirection();
+                StartCoroutine(PushInDirection());
                 timer = 0;
             }
         }
 
-        public void PushInDirection()
+        public IEnumerator PushInDirection()
         {
             pc.currentVelocity = new Vector2(value, 0);
+            flammesBleues.enabled = true;
+            yield return new WaitForSeconds(1f);
+            flammesBleues.enabled = false;
         }
     }
 }
