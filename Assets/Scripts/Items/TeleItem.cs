@@ -20,7 +20,7 @@ namespace LD36
             {
                 transform.position = playerToIgnore.transform.position + new Vector3(4, 5, 0);
                 GetComponentInChildren<Animator>().SetBool("Bad", bad);
-                StartCoroutine(StunTV(playerToIgnore, playerToIgnore.playerController.xAcceleration));
+                StartCoroutine(StunTV(playerToIgnore, playerToIgnore.playerController.xAcceleration, playerToIgnore.playerController.yAcceleration));
             }
 
             else
@@ -35,19 +35,21 @@ namespace LD36
             {
                 PlayerBase player = collision.GetComponent<PlayerBase>();
 
-                StartCoroutine(WatchTv(player, player.playerController.xAcceleration));
+                StartCoroutine(WatchTv(player, player.playerController.xAcceleration, player.playerController.yAcceleration));
             }
         }
 
-        IEnumerator WatchTv(PlayerBase player, float currentXAcceleration)
+        IEnumerator WatchTv(PlayerBase player, float currentXAcceleration, float currentYAcceleration)
         {
             player.playerController.xAcceleration = 0;
+            player.playerController.yAcceleration = 0;
             yield return new WaitForSeconds(3f);
 
             player.playerController.xAcceleration = currentXAcceleration;
+            player.playerController.yAcceleration = currentYAcceleration;
         }
 
-        IEnumerator StunTV(PlayerBase player, float currentXAcceleration)
+        IEnumerator StunTV(PlayerBase player, float currentXAcceleration, float currentYAcceleration)
         {
             gameObject.transform.SetParent(player.gameObject.transform);
             AudioSource audio = GetComponent<AudioSource>();
@@ -58,6 +60,7 @@ namespace LD36
             GameObject particles = Instantiate(effect, player.playerDisplay.headBone.position, Quaternion.identity) as GameObject;
 
             player.playerController.xAcceleration = 0;
+            player.playerController.yAcceleration = 0;
             player.playerController.currentVelocity = Vector2.zero;
 
             yield return new WaitForSeconds(2f);
@@ -66,6 +69,7 @@ namespace LD36
             Destroy(particles, 3f);
 
             player.playerController.xAcceleration = currentXAcceleration;
+            player.playerController.yAcceleration = currentYAcceleration;
         }
     }
 }
