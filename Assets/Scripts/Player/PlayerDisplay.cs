@@ -49,7 +49,7 @@ namespace LD36
 
             foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
             {
-                sr.sortingOrder = -(int)(transform.position.y * 100);
+                sr.sortingOrder = -(int)(chaiseBone.position.y * 100);
             }
 
             GetComponent<SpriteRenderer>().sortingOrder = -(int)(chaiseBone.position.y * 100) - 1;
