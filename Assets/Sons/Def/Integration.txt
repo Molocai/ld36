@@ -1,0 +1,15 @@
+Comportement sons
+
+Fauteuils: 
+1 son de fauteuil par personnage. 
+Tant que le joueur appuie sur la touche et que le perosnnage avance (cad pas s'il est bloqué ! ), le son doit joue en boucle, sans se superposer. 
+Si le joueur arrette d'appuyer, le son se termine à sa fin (pas killé instantanménent).
+à tester: linker la vitesse au pitch, sans dépasser disons 1.2
+Très surement: baisser le volume de chaque son de 10 à 15 dB
+
+Bonus/malus: 
+à lancer lors de l'activation du bonus malus
+
+Ambiance menu :
+à jouer 1 fois.
+

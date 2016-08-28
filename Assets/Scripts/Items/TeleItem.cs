@@ -9,6 +9,7 @@ namespace LD36
         public PlayerBase playerToIgnore;
 
         public AudioClip impactSound;
+        public AudioClip goodSound;
         public GameObject effect;
 
         public bool bad = false;
@@ -20,6 +21,11 @@ namespace LD36
                 transform.position = playerToIgnore.transform.position + new Vector3(4, 5, 0);
                 GetComponentInChildren<Animator>().SetBool("Bad", bad);
                 StartCoroutine(StunTV(playerToIgnore, playerToIgnore.playerController.xAcceleration));
+            }
+
+            else
+            {
+                GetComponent<AudioSource>().PlayOneShot(goodSound);
             }
         }
 

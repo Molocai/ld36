@@ -15,9 +15,9 @@ namespace LD36
             pc.xAcceleration += value;
             pc.xMaxVelocity += value;
 
-            //AudioSource audioSource = GetComponent<AudioSource>();
-            //audioSource.clip = sound;
-            //audioSource.Play();
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(sound);
+            Debug.Log(audioSource);
         }
 
         void OnDestroy()
