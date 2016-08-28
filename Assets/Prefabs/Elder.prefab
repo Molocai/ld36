@@ -18,6 +18,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &128158
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 447240}
+  m_Layer: 0
+  m_Name: GoodRoueCourseBone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &129542
 GameObject:
   m_ObjectHideFlags: 1
@@ -30,6 +45,21 @@ GameObject:
   - 114: {fileID: 11446734}
   m_Layer: 5
   m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &131776
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 423288}
+  m_Layer: 0
+  m_Name: BadRoueCourseBone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,6 +230,8 @@ Transform:
   - {fileID: 499902}
   - {fileID: 421000}
   - {fileID: 461058}
+  - {fileID: 447240}
+  - {fileID: 423288}
   m_Father: {fileID: 437456}
   m_RootOrder: 1
 --- !u!4 &412018
@@ -226,6 +258,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 406664}
   m_RootOrder: 2
+--- !u!4 &423288
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.42, y: -3.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 406664}
+  m_RootOrder: 5
 --- !u!4 &426728
 Transform:
   m_ObjectHideFlags: 1
@@ -254,6 +298,18 @@ Transform:
   - {fileID: 22414744}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &447240
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 406664}
+  m_RootOrder: 4
 --- !u!4 &461058
 Transform:
   m_ObjectHideFlags: 1
@@ -618,6 +674,8 @@ MonoBehaviour:
   badReactorBone: {fileID: 499902}
   goodIenchBone: {fileID: 421000}
   badIenchBone: {fileID: 461058}
+  goodRoueCourseBone: {fileID: 447240}
+  badRoueCourseBone: {fileID: 423288}
   wheelParticles: {fileID: 19801556}
   flammes: {fileID: 175006}
 --- !u!114 &11491148
@@ -638,6 +696,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   reactorGo: {fileID: 0}
   chienGo: {fileID: 0}
+  roueCourseGo: {fileID: 0}
 --- !u!198 &19801556
 ParticleSystem:
   m_ObjectHideFlags: 1
