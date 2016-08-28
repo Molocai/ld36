@@ -404,7 +404,7 @@ MonoBehaviour:
   playerBubble: {fileID: 0}
   bubble: {fileID: 22378092}
   distance: {fileID: 11407218}
-  arrondi: 1
+  arrondi: 0
 --- !u!114 &11412590
 MonoBehaviour:
   m_ObjectHideFlags: 1
