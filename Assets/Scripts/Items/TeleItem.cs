@@ -9,6 +9,7 @@ namespace LD36
         public PlayerBase playerToIgnore;
 
         public AudioClip impactSound;
+        public GameObject effect;
 
         public bool bad = false;
 
@@ -48,11 +49,15 @@ namespace LD36
             yield return new WaitForSeconds(1.2f);
             audio.PlayOneShot(impactSound);
             gameObject.transform.SetParent(null);
+            GameObject particles = Instantiate(effect, player.playerDisplay.headBone.position, Quaternion.identity) as GameObject;
 
             player.playerController.xAcceleration = 0;
             player.playerController.currentVelocity = Vector2.zero;
 
             yield return new WaitForSeconds(2f);
+
+            particles.GetComponent<Animator>().SetBool("Stop", true);
+            Destroy(particles, 3f);
 
             player.playerController.xAcceleration = currentXAcceleration;
         }

@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100512
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 499666}
+  m_Layer: 0
+  m_Name: HeadBone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &120398
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +247,7 @@ Transform:
   - {fileID: 461058}
   - {fileID: 447240}
   - {fileID: 423288}
+  - {fileID: 499666}
   m_Father: {fileID: 437456}
   m_RootOrder: 1
 --- !u!4 &412018
@@ -334,6 +350,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 437456}
   m_RootOrder: 0
+--- !u!4 &499666
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 0.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 406664}
+  m_RootOrder: 6
 --- !u!4 &499902
 Transform:
   m_ObjectHideFlags: 1
@@ -636,6 +664,7 @@ MonoBehaviour:
   wheelsVolume: 0.25
   collisionSound: {fileID: 8300000, guid: 5f22de90a17c48c4b9fdd438d7ef17f4, type: 3}
   collisionVolume: 0.3
+  inputsEnabled: 0
   currentVelocity: {x: 0, y: 0}
 --- !u!114 &11478402
 MonoBehaviour:
@@ -676,6 +705,7 @@ MonoBehaviour:
   badIenchBone: {fileID: 461058}
   goodRoueCourseBone: {fileID: 447240}
   badRoueCourseBone: {fileID: 423288}
+  headBone: {fileID: 499666}
   wheelParticles: {fileID: 19801556}
   flammes: {fileID: 175006}
 --- !u!114 &11491148

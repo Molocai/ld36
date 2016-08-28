@@ -17,6 +17,8 @@ namespace LD36
         public Transform goodRoueCourseBone;
         public Transform badRoueCourseBone;
 
+        public Transform headBone;
+
         public ParticleSystem wheelParticles;
 
         public GameObject flammes;
