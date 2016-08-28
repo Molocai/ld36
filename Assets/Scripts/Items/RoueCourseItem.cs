@@ -17,7 +17,6 @@ namespace LD36
 
             AudioSource audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(sound);
-            Debug.Log(audioSource);
         }
 
         void OnDestroy()
