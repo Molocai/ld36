@@ -12,13 +12,16 @@ namespace LD36
         public PlayerTuning playerTuning;
         [HideInInspector()]
         public PlayerDisplay playerDisplay;
+        [HideInInspector()]
+        public PlayerBubble playerBubble;
 
-        void Start()
+        void Awake()
         {
             // Initialization
             playerController = GetComponent<PlayerController>();
             playerTuning = GetComponent<PlayerTuning>();
             playerDisplay = GetComponent<PlayerDisplay>();
+            playerBubble = GetComponent<PlayerBubble>();
         }
     }
 }

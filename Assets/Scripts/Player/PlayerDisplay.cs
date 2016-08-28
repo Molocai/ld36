@@ -6,6 +6,8 @@ namespace LD36
     [RequireComponent(typeof(PlayerBase))]
     public class PlayerDisplay : PlayerBase
     {
+        public int spriteId;
+
         public Transform goodReactorBone;
         public Transform badReactorBone;
 

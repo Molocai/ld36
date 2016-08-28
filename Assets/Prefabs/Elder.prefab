@@ -398,6 +398,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eecbb0d362bf2f498c43e542b873225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  playerTuning: {fileID: 0}
+  playerDisplay: {fileID: 0}
+  playerBubble: {fileID: 0}
   bubble: {fileID: 22378092}
   distance: {fileID: 11407218}
   arrondi: 1
@@ -415,6 +419,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   playerTuning: {fileID: 0}
   playerDisplay: {fileID: 0}
+  playerBubble: {fileID: 0}
 --- !u!114 &11439866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,6 +482,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   playerTuning: {fileID: 0}
   playerDisplay: {fileID: 0}
+  playerBubble: {fileID: 0}
   xAcceleration: 1
   yAcceleration: 1
   xMaxVelocity: 1
@@ -523,6 +529,8 @@ MonoBehaviour:
   playerController: {fileID: 0}
   playerTuning: {fileID: 0}
   playerDisplay: {fileID: 0}
+  playerBubble: {fileID: 0}
+  spriteId: 0
   goodReactorBone: {fileID: 426728}
   badReactorBone: {fileID: 499902}
   goodIenchBone: {fileID: 421000}
@@ -543,6 +551,7 @@ MonoBehaviour:
   playerController: {fileID: 0}
   playerTuning: {fileID: 0}
   playerDisplay: {fileID: 0}
+  playerBubble: {fileID: 0}
   reactorGo: {fileID: 0}
   chienGo: {fileID: 0}
 --- !u!198 &19801556
@@ -2143,7 +2152,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 173869655
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &22414744
