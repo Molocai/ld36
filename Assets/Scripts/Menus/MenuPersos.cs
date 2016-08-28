@@ -6,10 +6,8 @@ namespace LD36
     [RequireComponent(typeof(RectTransform))]
     public class MenuPersos : MonoBehaviour
     {
-        [Tooltip("Affichage des commandes")]
-        public Text[] commandes;
-        [Tooltip("images de sélection des personnages")]
-        public Image[] images;
+        [Tooltip("Images de sélection des personnages")]
+        public DisplayPersos[] persos;
         [Tooltip("Sprites disponibles")]
         public Sprite[] sprites;
         [Tooltip("Bouton pour lancer la partie")]
@@ -39,11 +37,11 @@ namespace LD36
 
             for (int i = 0; i < 4; i++)
             {
-                commandes[i].gameObject.SetActive(nbPlayers > i);
-                images[i].sprite = sprites[0];
-                images[i].gameObject.SetActive(nbPlayers > i);
+                persos[i].GetComponent<Image>().sprite = sprites[0];
+                persos[i].gameObject.SetActive(nbPlayers > i);
                 if (i < nbPlayers)
                 {
+                    persos[i].Reload();
                     choix[i] = 0;
                     valides[i] = false;
                 }
@@ -142,7 +140,7 @@ namespace LD36
         {
             for (int i = 0; i < nbPlayers; i++)
             {
-                images[i].sprite = sprites[choix[i]];
+                persos[i].GetComponent<Image>().sprite = sprites[choix[i]];
             }
         }
 
