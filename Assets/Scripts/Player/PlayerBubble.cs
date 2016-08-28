@@ -39,7 +39,7 @@ namespace LD36
         {
             bubble.gameObject.SetActive(!IsVisible());
             distance.text = CalcDist() + "m";
-            Vector3 camPos = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 camPos = Camera.main.WorldToScreenPoint(playerDisplay.chaiseBone.position);
             RectTransform rect = distance.rectTransform;
             rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, camPos.y);
         }

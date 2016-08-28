@@ -18,6 +18,7 @@ namespace LD36
         public Transform badRoueCourseBone;
 
         public Transform headBone;
+        public Transform chaiseBone;
 
         public ParticleSystem wheelParticles;
 
