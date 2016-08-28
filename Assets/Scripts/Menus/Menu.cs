@@ -14,6 +14,8 @@ namespace LD36
         public RectTransform menuPerso;
         [Tooltip("Ecran de fin")]
         public RectTransform menuFin;
+        [Tooltip("Ecran générique")]
+        public RectTransform menuCredits;
 
         /// <summary>
         /// Menu affiché à l'écran
@@ -62,6 +64,11 @@ namespace LD36
         public void LancerJeu()
         {
             SceneManager.LoadScene("Game");
+        }
+
+        public void ChangeToCredits()
+        {
+            ChangeTo(menuCredits);
         }
 
         public void Quit()
