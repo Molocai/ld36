@@ -42,6 +42,12 @@ namespace LD36
                 ChienItem chien = chienGo.GetComponent<ChienItem>();
                 chien.SetPlayerController(playerController);
             }
+
+            if (go.GetComponent<TeleItem>() != null)
+            {
+                GameObject teleGo = Instantiate(go, transform.position - new Vector3(-2, 0, 0), Quaternion.identity) as GameObject;
+                teleGo.GetComponent<TeleItem>().playerToIgnore = GetComponent<PlayerBase>();
+            }
         }
     }
 }
