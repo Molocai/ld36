@@ -216,7 +216,7 @@ Transform:
   - {fileID: 587285465}
   - {fileID: 262794805}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &306496112
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +455,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 121961076}
     m_Modifications:
+    - target: {fileID: 11414376, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
+      propertyPath: pickups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 425148, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
       propertyPath: m_LocalPosition.x
       value: 24.38
@@ -491,6 +495,10 @@ Prefab:
       propertyPath: m_Name
       value: ItemSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 11414376, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
+      propertyPath: pickups.Array.data[2]
+      value: 
+      objectReference: {fileID: 165492, guid: cd44d53432d68a24a891b90f3c802c6a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
   m_IsPrefabParent: 0
@@ -558,6 +566,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 121961076}
     m_Modifications:
+    - target: {fileID: 11414376, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
+      propertyPath: pickups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 425148, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -590,6 +602,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11414376, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
+      propertyPath: pickups.Array.data[2]
+      value: 
+      objectReference: {fileID: 165492, guid: cd44d53432d68a24a891b90f3c802c6a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
   m_IsPrefabParent: 0
@@ -754,6 +770,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 121961076}
     m_Modifications:
+    - target: {fileID: 11414376, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
+      propertyPath: pickups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 425148, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
       propertyPath: m_LocalPosition.x
       value: 12.27
@@ -790,6 +810,10 @@ Prefab:
       propertyPath: m_Name
       value: ItemSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 11414376, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
+      propertyPath: pickups.Array.data[2]
+      value: 
+      objectReference: {fileID: 165492, guid: cd44d53432d68a24a891b90f3c802c6a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8ff83ca617e8940a39825133604cfe, type: 2}
   m_IsPrefabParent: 0

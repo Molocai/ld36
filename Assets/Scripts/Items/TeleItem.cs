@@ -5,6 +5,7 @@ namespace LD36
 {
     public class TeleItem : MonoBehaviour
     {
+        [HideInInspector()]
         public PlayerBase playerToIgnore;
 
         public void OnTriggerEnter2D(Collider2D collision)
