@@ -12,6 +12,8 @@ namespace LD36
         public RectTransform menuTitre;
         [Tooltip("Ecran de sélection des personnages")]
         public RectTransform menuPerso;
+        [Tooltip("Ecran de fin")]
+        public RectTransform menuFin;
 
         /// <summary>
         /// Menu affiché à l'écran
@@ -20,7 +22,7 @@ namespace LD36
 
         void Start()
         {
-            currentMenu = menuTitre;
+            currentMenu = GameManager.Get.End ? menuFin : menuTitre;
             SetSelection();
         }
 
