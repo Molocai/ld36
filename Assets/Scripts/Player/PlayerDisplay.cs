@@ -43,12 +43,13 @@ namespace LD36
 
         void LateUpdate()
         {
-            GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
 
             foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
             {
                 sr.sortingOrder = -(int)(transform.position.y * 100);
             }
+
+            GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100) - 1;
         }
 
         public void DisplayFlammes(bool display)
