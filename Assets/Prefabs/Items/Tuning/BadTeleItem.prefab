@@ -10,10 +10,8 @@ GameObject:
   - 4: {fileID: 476092}
   - 212: {fileID: 21250696}
   - 114: {fileID: 11492802}
-  - 61: {fileID: 6145704}
-  - 61: {fileID: 6132520}
   m_Layer: 0
-  m_Name: GoodTeleItem
+  m_Name: BadTeleItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,34 +29,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6132520
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193480}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -0.99, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 5.07, y: 2.05}
---- !u!61 &6145704
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 193480}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: -4.54, y: -4.19}
-  serializedVersion: 2
-  m_Size: {x: 6.26, y: 20.73}
 --- !u!114 &11492802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToIgnore: {fileID: 0}
-  bad: 0
+  bad: 1
 --- !u!212 &21250696
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -98,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -823437479
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d3f394450489ef49b4050cb25c3b594, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd9bc6779c2ee624a964bd53d0c6b551, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -12,13 +12,9 @@ namespace LD36
 
         void Start()
         {
-            if (!bad)
+            if (bad)
             {
-                foreach(BoxCollider2D box in GetComponents<BoxCollider2D>())
-                {
-                    if (box.isTrigger)
-                        Destroy(box);
-                }
+                transform.position = playerToIgnore.transform.position + new Vector3(0, 10, 0);
             }
         }
 
