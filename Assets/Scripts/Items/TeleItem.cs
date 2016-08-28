@@ -16,7 +16,7 @@ namespace LD36
         {
             if (bad)
             {
-                transform.position = playerToIgnore.transform.position + new Vector3(8, 5, 0);
+                transform.position = playerToIgnore.transform.position + new Vector3(4, 5, 0);
                 GetComponentInChildren<Animator>().SetBool("Bad", bad);
                 StartCoroutine(StunTV(playerToIgnore, playerToIgnore.playerController.xAcceleration));
             }
@@ -42,10 +42,12 @@ namespace LD36
 
         IEnumerator StunTV(PlayerBase player, float currentXAcceleration)
         {
+            gameObject.transform.SetParent(player.gameObject.transform);
             AudioSource audio = GetComponent<AudioSource>();
 
             yield return new WaitForSeconds(1.2f);
             audio.PlayOneShot(impactSound);
+            gameObject.transform.SetParent(null);
 
             player.playerController.xAcceleration = 0;
             player.playerController.currentVelocity = Vector2.zero;
