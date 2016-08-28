@@ -8,6 +8,20 @@ namespace LD36
         [HideInInspector()]
         public PlayerBase playerToIgnore;
 
+        public bool bad = false;
+
+        void Start()
+        {
+            if (!bad)
+            {
+                foreach(BoxCollider2D box in GetComponents<BoxCollider2D>())
+                {
+                    if (box.isTrigger)
+                        Destroy(box);
+                }
+            }
+        }
+
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.GetComponent<PlayerBase>() != null && collision.GetComponent<PlayerBase>() != playerToIgnore)
