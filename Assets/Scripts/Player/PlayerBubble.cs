@@ -31,7 +31,6 @@ namespace LD36
             im = bubble.GetComponentInChildren<Image>();
 
             im.sprite = Resources.Load("bulle" + playerDisplay.spriteId, typeof(Sprite)) as Sprite;
-            Debug.Log(colors[playerDisplay.spriteId]);
             distance.color = colors[playerDisplay.spriteId];
         }
 
