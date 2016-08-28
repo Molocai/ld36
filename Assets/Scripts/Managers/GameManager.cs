@@ -77,6 +77,22 @@ namespace LD36
             }
         }
 
+        /// <summary>
+        /// Détermine si une course est finie
+        /// </summary>
+        private bool end = false;
+        public bool End
+        {
+            get
+            {
+                return end;
+            }
+            set
+            {
+                end = value;
+            }
+        }
+
         void Start()
         {
             DontDestroyOnLoad(gameObject);
