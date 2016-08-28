@@ -27,6 +27,7 @@ namespace LD36
         }
 
         public GameInput[] keybindings;
+        public AudioSource audioSource;
 
         [HideInInspector]
         public Clavier clavier = Clavier.AZERTY;
@@ -79,6 +80,7 @@ namespace LD36
         void Start()
         {
             DontDestroyOnLoad(gameObject);
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void SetSkin(int player, int skin)

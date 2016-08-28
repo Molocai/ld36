@@ -36,9 +36,19 @@ namespace LD36
         [Header("Player inputs")]
         public GameInput playerInputs;
 
+        [Header("Sounds")]
+        public AudioClip wheelsSound;
+        [Range(0f, 1f)]
+        public float wheelsVolume;
+
+        public AudioClip collisionSound;
+        [Range(0f, 1f)]
+        public float collisionVolume;
+
         /// <summary>
         /// Current velocity
         /// </summary>
+        [HideInInspector()]
         public Vector2 currentVelocity;
 
         void Update()
@@ -46,6 +56,10 @@ namespace LD36
             if (Input.GetKeyDown(playerInputs.MoveKey.azertyKey))
             {
                 currentVelocity.x += xAcceleration * Time.deltaTime;
+                audioSource.clip = wheelsSound;
+                audioSource.volume = wheelsVolume;
+                if (!audioSource.isPlaying)
+                    audioSource.Play();
             }
 
             if (Input.GetKeyDown(playerInputs.UpKey.azertyKey))
@@ -84,6 +98,22 @@ namespace LD36
         private void DecayVelocity()
         {
             currentVelocity = Vector2.Lerp(currentVelocity, Vector2.zero, Time.deltaTime * velocityDecaySpeed);
+        }
+
+        public void OnCollisionEnter2D(Collision2D collision)
+        {
+            PlayerBase otherPlayer = collision.gameObject.GetComponent<PlayerBase>();
+
+            if (otherPlayer != null)
+            {
+                Debug.Log("Collision other player");
+
+                if (!GameManager.Get.audioSource.isPlaying)
+                {
+                    GameManager.Get.audioSource.clip = collisionSound;
+                    GameManager.Get.audioSource.Play();
+                }
+            }
         }
     }
 }

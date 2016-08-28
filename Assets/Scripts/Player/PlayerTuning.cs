@@ -40,7 +40,7 @@ namespace LD36
                 chienGo.transform.SetParent(bone);
 
                 ChienItem chien = chienGo.GetComponent<ChienItem>();
-                chien.SetPlayerController(playerController);
+                chien.Init(playerController);
             }
 
             if (go.GetComponent<TeleItem>() != null)

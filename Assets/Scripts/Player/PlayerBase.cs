@@ -14,6 +14,8 @@ namespace LD36
         public PlayerDisplay playerDisplay;
         [HideInInspector()]
         public PlayerBubble playerBubble;
+        [HideInInspector()]
+        public AudioSource audioSource;
 
         void Awake()
         {
@@ -22,6 +24,7 @@ namespace LD36
             playerTuning = GetComponent<PlayerTuning>();
             playerDisplay = GetComponent<PlayerDisplay>();
             playerBubble = GetComponent<PlayerBubble>();
+            audioSource = GetComponent<AudioSource>();
         }
     }
 }

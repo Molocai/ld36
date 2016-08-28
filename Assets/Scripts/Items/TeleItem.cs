@@ -8,6 +8,8 @@ namespace LD36
         [HideInInspector()]
         public PlayerBase playerToIgnore;
 
+        public AudioClip impactSound;
+
         public bool bad = false;
 
         void Start()
@@ -40,7 +42,10 @@ namespace LD36
 
         IEnumerator StunTV(PlayerBase player, float currentXAcceleration)
         {
+            AudioSource audio = GetComponent<AudioSource>();
+
             yield return new WaitForSeconds(1.2f);
+            audio.PlayOneShot(impactSound);
 
             player.playerController.xAcceleration = 0;
             player.playerController.currentVelocity = Vector2.zero;
