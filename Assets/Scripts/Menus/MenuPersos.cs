@@ -37,11 +37,11 @@ namespace LD36
 
             for (int i = 0; i < 4; i++)
             {
-                persos[i].GetComponent<Image>().sprite = sprites[0];
-                persos[i].gameObject.SetActive(nbPlayers > i);
+                persos[i].gameObject.SetActive(i < nbPlayers);
                 if (i < nbPlayers)
                 {
                     persos[i].Reload();
+                    persos[i].SetSprite(sprites[0]);
                     choix[i] = 0;
                     valides[i] = false;
                 }
@@ -140,7 +140,8 @@ namespace LD36
         {
             for (int i = 0; i < nbPlayers; i++)
             {
-                persos[i].GetComponent<Image>().sprite = sprites[choix[i]];
+                persos[i].SetSprite(sprites[choix[i]]);
+                persos[i].SetConfirm(valides[i]);
             }
         }
 
@@ -156,6 +157,7 @@ namespace LD36
                 valides[player] = true;
                 CheckSprites();
             }
+            UpdateImage();
             CheckLancer();
         }
 
