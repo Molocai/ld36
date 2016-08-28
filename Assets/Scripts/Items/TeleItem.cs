@@ -16,6 +16,8 @@ namespace LD36
 
         void Start()
         {
+            GetComponentInChildren<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+
             if (bad)
             {
                 transform.position = playerToIgnore.transform.position + new Vector3(4, 5, 0);
