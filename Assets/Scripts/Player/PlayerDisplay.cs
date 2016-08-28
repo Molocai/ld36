@@ -52,7 +52,7 @@ namespace LD36
                 sr.sortingOrder = -(int)(transform.position.y * 100);
             }
 
-            GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100) - 1;
+            GetComponent<SpriteRenderer>().sortingOrder = -(int)(chaiseBone.position.y * 100) - 1;
         }
 
         public void DisplayFlammes(bool display)

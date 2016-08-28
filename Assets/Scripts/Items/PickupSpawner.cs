@@ -16,7 +16,8 @@ namespace LD36
             {
                 GameObject spawn = pickups[Random.Range(0, pickups.Length)];
                 Vector2 position = Random.insideUnitCircle * spawnRadius;
-                Instantiate(spawn, transform.position + new Vector3(position.x, position.y), Quaternion.identity);
+                GameObject item = Instantiate(spawn, transform.position + new Vector3(position.x, position.y), Quaternion.identity) as GameObject;
+                item.transform.localScale = new Vector3((Random.Range(0, 2) == 0) ? spawn.transform.localScale.x * -1 : spawn.transform.localScale.x, spawn.transform.localScale.y);
             }
         }
 
