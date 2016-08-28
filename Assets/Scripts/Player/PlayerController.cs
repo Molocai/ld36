@@ -106,8 +106,6 @@ namespace LD36
 
             if (otherPlayer != null)
             {
-                Debug.Log("Collision other player");
-
                 if (!GameManager.Get.audioSource.isPlaying)
                 {
                     GameManager.Get.audioSource.clip = collisionSound;
