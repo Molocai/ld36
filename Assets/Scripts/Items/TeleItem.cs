@@ -14,7 +14,9 @@ namespace LD36
         {
             if (bad)
             {
-                transform.position = playerToIgnore.transform.position + new Vector3(0, 10, 0);
+                transform.position = playerToIgnore.transform.position + new Vector3(8, 5, 0);
+                GetComponentInChildren<Animator>().SetBool("Bad", bad);
+                StartCoroutine(StunTV(playerToIgnore, playerToIgnore.playerController.xAcceleration));
             }
         }
 
@@ -32,6 +34,17 @@ namespace LD36
         {
             player.playerController.xAcceleration = 0;
             yield return new WaitForSeconds(3f);
+
+            player.playerController.xAcceleration = currentXAcceleration;
+        }
+
+        IEnumerator StunTV(PlayerBase player, float currentXAcceleration)
+        {
+            yield return new WaitForSeconds(1.2f);
+
+            player.playerController.xAcceleration = 0;
+            player.playerController.currentVelocity = Vector2.zero;
+            yield return new WaitForSeconds(2f);
 
             player.playerController.xAcceleration = currentXAcceleration;
         }
