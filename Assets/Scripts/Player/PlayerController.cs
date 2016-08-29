@@ -37,7 +37,7 @@ namespace LD36
         public GameInput playerInputs;
 
         [Header("Sounds")]
-        public AudioClip wheelsSound;
+        public string wheelsSound;
         [Range(0f, 1f)]
         public float wheelsVolume;
 
@@ -61,7 +61,7 @@ namespace LD36
             if (Input.GetKeyDown(playerInputs.MoveKey.azertyKey))
             {
                 currentVelocity.x += xAcceleration * Time.deltaTime;
-                audioSource.clip = wheelsSound;
+                audioSource.clip = Resources.Load(wheelsSound + playerDisplay.spriteId) as AudioClip;
                 audioSource.volume = wheelsVolume;
                 if (!audioSource.isPlaying)
                     audioSource.Play();

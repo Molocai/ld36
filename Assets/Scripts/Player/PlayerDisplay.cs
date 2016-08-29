@@ -50,6 +50,9 @@ namespace LD36
             foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>())
             {
                 sr.sortingOrder = -(int)(chaiseBone.position.y * 100);
+
+                if (sr.gameObject.name == "OMBRE")
+                    sr.sortingOrder = -1000;
             }
 
             GetComponent<SpriteRenderer>().sortingOrder = -(int)(chaiseBone.position.y * 100) - 1;
