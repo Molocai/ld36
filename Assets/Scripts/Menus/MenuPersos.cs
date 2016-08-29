@@ -114,6 +114,7 @@ namespace LD36
                 }
             }
             UpdateImage();
+            FindObjectOfType<Menu>().PlayBouton();
         }
 
         void Increment(ref int start, bool up)
@@ -159,6 +160,7 @@ namespace LD36
             }
             UpdateImage();
             CheckLancer();
+            FindObjectOfType<Menu>().PlaySelect();
         }
 
         void CheckSprites()

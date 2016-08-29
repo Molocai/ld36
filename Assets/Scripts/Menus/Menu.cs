@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 namespace LD36
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Menu : MonoBehaviour
     {
-
+        [Header("Ecrans")]
         [Tooltip("Ecran titre")]
         public RectTransform menuTitre;
         [Tooltip("Ecran de sélection des personnages")]
@@ -19,15 +20,31 @@ namespace LD36
         [Tooltip("Image du vainqueur")]
         public Vainqueur vainqueur;
 
+        [Header("Sons")]
+        [Tooltip("Musique d'ambiance")]
+        public AudioClip ambiance;
+        [Tooltip("Son de survol d'un bouton")]
+        public AudioClip sonBouton;
+        [Tooltip("Son de sélection d'un bouton")]
+        public AudioClip sonSelect;
+
         /// <summary>
         /// Menu affiché à l'écran
         /// </summary>
         private RectTransform currentMenu;
+        /// <summary>
+        /// Source audio
+        /// </summary>
+        private AudioSource source;
 
         void Start()
         {
             ChangeTo(GameManager.Get.End ? menuFin : menuTitre);
             SetSelection();
+            source = GetComponent<AudioSource>();
+            source.clip = ambiance;
+            source.loop = true;
+            source.Play();
         }
 
         void SetSelection()
@@ -71,6 +88,16 @@ namespace LD36
         public void ChangeToCredits()
         {
             ChangeTo(menuCredits);
+        }
+
+        public void PlayBouton()
+        {
+            source.PlayOneShot(sonBouton);
+        }
+
+        public void PlaySelect()
+        {
+            source.PlayOneShot(sonSelect);
         }
 
         public void Quit()
