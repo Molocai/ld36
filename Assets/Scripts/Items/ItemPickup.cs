@@ -27,7 +27,6 @@ namespace LD36
             {
                 // Decide if good or bad item
                 int rand = (int)Random.Range(0f, 101);
-                Debug.Log(rand);
 
                 // Pick up the item and destroy it
                 collidingPlayer.playerTuning.PickupItem((rand < goodChance) ? goodItem : badItem, (rand < goodChance) ? GOOD_BAD.GOOD : GOOD_BAD.BAD);
