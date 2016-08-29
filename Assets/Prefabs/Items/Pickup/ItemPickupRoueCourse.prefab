@@ -56,6 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goodItem: {fileID: 152576, guid: e33136961213b8e4b9bad521ca5111a9, type: 2}
+  goodChance: 50
   badItem: {fileID: 152576, guid: 6a64b09374140004b9c82be9e05b2566, type: 2}
 --- !u!212 &21284126
 SpriteRenderer:

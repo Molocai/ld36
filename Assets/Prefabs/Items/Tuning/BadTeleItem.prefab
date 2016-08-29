@@ -178,7 +178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerToIgnore: {fileID: 0}
   impactSound: {fileID: 8300000, guid: 9e248287a1a7e3b4ea03a36581b9ba33, type: 3}
+  goodSound: {fileID: 0}
   effect: {fileID: 128736, guid: cdb23eef0eef70d4b8d24168fe8121cd, type: 2}
+  effect2: {fileID: 178600, guid: e4b2c397742b1f4499a66a618b5d2542, type: 2}
   bad: 1
 --- !u!212 &21211886
 SpriteRenderer:

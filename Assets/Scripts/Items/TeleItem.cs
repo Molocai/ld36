@@ -11,6 +11,7 @@ namespace LD36
         public AudioClip impactSound;
         public AudioClip goodSound;
         public GameObject effect;
+        public GameObject effect2;
 
         public bool bad = false;
 
@@ -56,10 +57,13 @@ namespace LD36
             gameObject.transform.SetParent(player.gameObject.transform);
             AudioSource audio = GetComponent<AudioSource>();
 
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(1.4f);
             audio.PlayOneShot(impactSound);
             gameObject.transform.SetParent(null);
             GameObject particles = Instantiate(effect, player.playerDisplay.headBone.position, Quaternion.identity) as GameObject;
+            GameObject particles2 = Instantiate(effect2, player.playerDisplay.headBone.position, Quaternion.identity) as GameObject;
+            Destroy(particles, 5f);
+            Destroy(particles2, 5f);
 
             player.playerController.xAcceleration = 0;
             player.playerController.yAcceleration = 0;
