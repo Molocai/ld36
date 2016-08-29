@@ -37,8 +37,6 @@ namespace LD36
         public IEnumerator StartCountdown()
         {
             yield return new WaitForSeconds(3f);
-
-            GetComponent<AudioSource>().Play();
             tuto.Stop();
             foreach (PlayerBase p in GameObject.FindObjectsOfType<PlayerBase>())
             {
