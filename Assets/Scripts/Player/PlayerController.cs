@@ -62,7 +62,11 @@ namespace LD36
             {
                 currentVelocity.x += xAcceleration * Time.deltaTime;
                 audioSource.clip = Resources.Load(wheelsSound + playerDisplay.spriteId) as AudioClip;
-                audioSource.volume = wheelsVolume;
+                if (wheelsSound + playerDisplay.spriteId == "Fauteuils-0")
+                    audioSource.volume = wheelsVolume / 2;
+                else
+                    audioSource.volume = wheelsVolume;
+
                 if (!audioSource.isPlaying)
                     audioSource.Play();
             }
