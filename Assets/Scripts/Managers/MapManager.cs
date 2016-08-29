@@ -8,6 +8,7 @@ namespace LD36
     {
         public GameObject[] spawns;
         public GameObject playerPrefab;
+        public TutoKeys tuto;
 
         public static Action OnPlayerSpawned;
 
@@ -29,6 +30,8 @@ namespace LD36
 
                 StartCoroutine(StartCountdown());
             }
+
+            tuto.Init(nbPlayers);
         }
 
         public IEnumerator StartCountdown()
@@ -36,6 +39,7 @@ namespace LD36
             yield return new WaitForSeconds(3f);
 
             GetComponent<AudioSource>().Play();
+            tuto.Stop();
             foreach (PlayerBase p in GameObject.FindObjectsOfType<PlayerBase>())
             {
                 p.playerController.inputsEnabled = true;

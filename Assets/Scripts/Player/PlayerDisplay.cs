@@ -53,6 +53,8 @@ namespace LD36
 
                 if (sr.gameObject.name == "OMBRE")
                     sr.sortingOrder = -1000;
+                if (sr.gameObject.name == "Flamme")
+                    sr.sortingOrder -= 1;
             }
 
             GetComponent<SpriteRenderer>().sortingOrder = -(int)(chaiseBone.position.y * 100) - 1;
