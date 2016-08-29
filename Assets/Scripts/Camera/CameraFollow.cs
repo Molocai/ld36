@@ -14,12 +14,6 @@ namespace LD36
         /// Delay for the camera to catch up to the player
         /// </summary>
         public float smoothDelay = 2f;
-
-        /// <summary>
-        /// Offset the camera must maintain
-        /// </summary>
-        private Vector3 offset = new Vector3(0, 0, -10);
-
         void Start()
         {
             InvokeRepeating("CheckForNewTarget", 3, 1);
@@ -28,7 +22,10 @@ namespace LD36
         void Update()
         {
             if (target != null)
-                transform.position = Vector3.Lerp(transform.position, target.transform.position + offset, Time.deltaTime * smoothDelay);
+            {
+                Vector3 newPos = new Vector3(Mathf.Lerp(transform.position.x, target.transform.position.x, Time.deltaTime * smoothDelay), transform.position.y, transform.position.z);
+                transform.position = newPos;
+            }
         }
 
         void CheckForNewTarget()
