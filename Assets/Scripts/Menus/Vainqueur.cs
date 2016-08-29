@@ -21,7 +21,7 @@ namespace LD36
         public void Reload()
         {
             GetComponent<Image>().sprite = GameManager.Get.winnerSprite;
-            nom.sprite = noms[GameManager.Get.winnerId];
+            nom.sprite = noms[int.Parse(GameManager.Get.winnerSprite.name[8].ToString())];
         }
     }
 }
