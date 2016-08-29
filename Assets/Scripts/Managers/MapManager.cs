@@ -35,6 +35,7 @@ namespace LD36
         {
             yield return new WaitForSeconds(3f);
 
+            GetComponent<AudioSource>().Play();
             foreach (PlayerBase p in GameObject.FindObjectsOfType<PlayerBase>())
             {
                 p.playerController.inputsEnabled = true;
