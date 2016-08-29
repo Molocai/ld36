@@ -1004,8 +1004,9 @@ GameObject:
   - 224: {fileID: 246716324}
   - 222: {fileID: 246716327}
   - 114: {fileID: 246716326}
+  - 114: {fileID: 246716325}
   m_Layer: 5
-  m_Name: Papy
+  m_Name: Vainqueur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,6 +1029,17 @@ RectTransform:
   m_AnchoredPosition: {x: 163, y: -453}
   m_SizeDelta: {x: 1024, y: 1024}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &246716325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246716323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b5ab7f3fbb32d4690c09c082fb47bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &246716326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5054,6 +5066,7 @@ MonoBehaviour:
   menuPerso: {fileID: 1080988582}
   menuFin: {fileID: 526685237}
   menuCredits: {fileID: 200347092}
+  vainqueur: {fileID: 246716325}
 --- !u!1 &2030617762
 GameObject:
   m_ObjectHideFlags: 0

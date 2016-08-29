@@ -16,6 +16,8 @@ namespace LD36
         public RectTransform menuFin;
         [Tooltip("Ecran générique")]
         public RectTransform menuCredits;
+        [Tooltip("Image du vainqueur")]
+        public Vainqueur vainqueur;
 
         /// <summary>
         /// Menu affiché à l'écran
@@ -24,7 +26,7 @@ namespace LD36
 
         void Start()
         {
-            currentMenu = GameManager.Get.End ? menuFin : menuTitre;
+            ChangeTo(GameManager.Get.End ? menuFin : menuTitre);
             SetSelection();
         }
 
