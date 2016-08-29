@@ -58,32 +58,65 @@ namespace LD36
             if (!inputsEnabled)
                 return;
 
-            if (Input.GetKeyDown(playerInputs.MoveKey.azertyKey))
+            if (GameManager.Get.clavier == GameManager.Clavier.AZERTY)
             {
-                currentVelocity.x += xAcceleration * Time.deltaTime;
-                audioSource.clip = Resources.Load(wheelsSound + playerDisplay.spriteId) as AudioClip;
-                if (wheelsSound + playerDisplay.spriteId == "Fauteuils-0")
-                    audioSource.volume = wheelsVolume / 2;
-                else
-                    audioSource.volume = wheelsVolume;
+                if (Input.GetKeyDown(playerInputs.MoveKey.azertyKey))
+                {
+                    currentVelocity.x += xAcceleration * Time.deltaTime;
+                    audioSource.clip = Resources.Load(wheelsSound + playerDisplay.spriteId) as AudioClip;
+                    if (wheelsSound + playerDisplay.spriteId == "Fauteuils-0")
+                        audioSource.volume = wheelsVolume / 2;
+                    else
+                        audioSource.volume = wheelsVolume;
 
-                if (!audioSource.isPlaying)
-                    audioSource.Play();
+                    if (!audioSource.isPlaying)
+                        audioSource.Play();
+                }
+
+                if (Input.GetKeyDown(playerInputs.UpKey.azertyKey))
+                {
+                    currentVelocity.y += yAcceleration * Time.deltaTime;
+                }
+
+                if (Input.GetKeyDown(playerInputs.DownKey.azertyKey))
+                {
+                    currentVelocity.y -= yAcceleration * Time.deltaTime;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    SceneManager.LoadScene("Menu");
+                }
             }
-
-            if (Input.GetKeyDown(playerInputs.UpKey.azertyKey))
+            else
             {
-                currentVelocity.y += yAcceleration * Time.deltaTime;
-            }
+                if (Input.GetKeyDown(playerInputs.MoveKey.qwertyKey))
+                {
+                    currentVelocity.x += xAcceleration * Time.deltaTime;
+                    audioSource.clip = Resources.Load(wheelsSound + playerDisplay.spriteId) as AudioClip;
+                    if (wheelsSound + playerDisplay.spriteId == "Fauteuils-0")
+                        audioSource.volume = wheelsVolume / 2;
+                    else
+                        audioSource.volume = wheelsVolume;
 
-            if (Input.GetKeyDown(playerInputs.DownKey.azertyKey))
-            {
-                currentVelocity.y -= yAcceleration * Time.deltaTime;
-            }
+                    if (!audioSource.isPlaying)
+                        audioSource.Play();
+                }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                SceneManager.LoadScene("Menu");
+                if (Input.GetKeyDown(playerInputs.UpKey.qwertyKey))
+                {
+                    currentVelocity.y += yAcceleration * Time.deltaTime;
+                }
+
+                if (Input.GetKeyDown(playerInputs.DownKey.qwertyKey))
+                {
+                    currentVelocity.y -= yAcceleration * Time.deltaTime;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    SceneManager.LoadScene("Menu");
+                }
             }
 
             ApplyAndClampVelocity();

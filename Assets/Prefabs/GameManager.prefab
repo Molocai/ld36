@@ -46,9 +46,6 @@ MonoBehaviour:
     DownKey:
       azertyKey: 113
       qwertyKey: 97
-    UseKey:
-      azertyKey: 122
-      qwertyKey: 119
     MoveKey:
       azertyKey: 115
       qwertyKey: 115
@@ -58,9 +55,6 @@ MonoBehaviour:
     DownKey:
       azertyKey: 274
       qwertyKey: 274
-    UseKey:
-      azertyKey: 276
-      qwertyKey: 276
     MoveKey:
       azertyKey: 275
       qwertyKey: 275
@@ -70,9 +64,6 @@ MonoBehaviour:
     DownKey:
       azertyKey: 103
       qwertyKey: 103
-    UseKey:
-      azertyKey: 121
-      qwertyKey: 121
     MoveKey:
       azertyKey: 104
       qwertyKey: 104
@@ -82,13 +73,12 @@ MonoBehaviour:
     DownKey:
       azertyKey: 108
       qwertyKey: 108
-    UseKey:
-      azertyKey: 112
-      qwertyKey: 112
     MoveKey:
       azertyKey: 109
-      qwertyKey: 58
+      qwertyKey: 59
+  audioSource: {fileID: 0}
   clavier: 0
+  winnerSprite: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
