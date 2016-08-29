@@ -14,6 +14,7 @@ namespace LD36
             {
                 GameManager.Get.End = true;
                 GameManager.Get.winnerSprite = player.GetComponent<SpriteRenderer>().sprite;
+                GameManager.Get.winnerId = player.playerDisplay.spriteId;
                 SceneManager.LoadScene("Menu");
             }
         }

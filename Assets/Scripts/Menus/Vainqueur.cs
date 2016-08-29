@@ -8,6 +8,9 @@ namespace LD36
     {
         private Image image;
 
+        public Sprite[] noms;
+        public Image nom;
+
         // Use this for initialization
         void Start()
         {
@@ -18,6 +21,7 @@ namespace LD36
         public void Reload()
         {
             GetComponent<Image>().sprite = GameManager.Get.winnerSprite;
+            nom.sprite = noms[GameManager.Get.winnerId];
         }
     }
 }

@@ -14,6 +14,8 @@ namespace LD36
         public ImgAQ moveImg;
         [Tooltip("Icone de confirmation")]
         public Image confirm;
+        [Tooltip("Image de nom")]
+        public Image name;
 
         private Image image;
 
@@ -35,6 +37,11 @@ namespace LD36
         public void SetSprite(Sprite sprite)
         {
             image.sprite = sprite;
+        }
+
+        public void SetNom(Sprite sprite)
+        {
+            name.sprite = sprite;
         }
 
         public void SetConfirm(bool conf)

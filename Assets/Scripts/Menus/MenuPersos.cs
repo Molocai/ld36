@@ -10,6 +10,7 @@ namespace LD36
         public DisplayPersos[] persos;
         [Tooltip("Sprites disponibles")]
         public Sprite[] sprites;
+        public Sprite[] noms;
         [Tooltip("Bouton pour lancer la partie")]
         public Button lancer;
 
@@ -142,6 +143,7 @@ namespace LD36
             for (int i = 0; i < nbPlayers; i++)
             {
                 persos[i].SetSprite(sprites[choix[i]]);
+                persos[i].SetNom(noms[choix[i]]);
                 persos[i].SetConfirm(valides[i]);
             }
         }

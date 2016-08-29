@@ -94,6 +94,7 @@ namespace LD36
         }
 
         public Sprite winnerSprite;
+        public int winnerId;
 
         void Start()
         {
