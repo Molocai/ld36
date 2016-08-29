@@ -93,6 +93,8 @@ namespace LD36
             }
         }
 
+        public Sprite winnerSprite;
+
         void Start()
         {
             DontDestroyOnLoad(gameObject);
