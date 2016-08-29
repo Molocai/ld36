@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace LD36
 {
@@ -79,6 +79,11 @@ namespace LD36
             if (Input.GetKeyDown(playerInputs.DownKey.azertyKey))
             {
                 currentVelocity.y -= yAcceleration * Time.deltaTime;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("Menu");
             }
 
             ApplyAndClampVelocity();
